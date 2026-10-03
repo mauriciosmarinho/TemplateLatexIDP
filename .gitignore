@@ -39,3 +39,6 @@ Thumbs.db
 
 # Issues locais das skills de agente (privadas)
 .scratch/
+
+# Gerado pelo autograde validar ia-6.2 (regravado a cada execucao)
+wayfinder-export.json
