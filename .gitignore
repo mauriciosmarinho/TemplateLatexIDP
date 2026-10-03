@@ -36,3 +36,6 @@ Thumbs.db
 # Descomente a linha abaixo se NÃO quiser versionar o PDF compilado.
 # main.pdf
 *-SAVE-ERROR
+
+# Issues locais das skills de agente (privadas)
+.scratch/
