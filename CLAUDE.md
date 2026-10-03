@@ -176,3 +176,17 @@ Só aparecem nas referências as obras efetivamente citadas — não use `\nocit
 2. Relate em uma ou duas frases o que mudou.
 3. Se inseriu algum `% TODO`, diga onde e por quê.
 4. Não faça `git commit` sem que o usuário peça.
+
+## Agent skills
+
+### Issue tracker
+
+Issues ficam no GitHub Issues do fork `mauriciosmarinho/TemplateLatexIDP` (remote `origin`), via `gh`. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Usa os cinco labels padrão (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`). See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context: um `CONTEXT.md` e `docs/adr/` na raiz. See `docs/agents/domain.md`.
