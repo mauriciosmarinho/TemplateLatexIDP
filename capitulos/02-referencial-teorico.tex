@@ -3,122 +3,55 @@
 %%
 %% Esta e a parte do trabalho que mais demanda dominio das regras de citacao
 %% (diretas e indiretas). Reveja a NBR 10520 antes de escrever.
+%%
+%% Texto dummy (exercicio ia-6.1): trechos do pre-projeto do autor (versao 7).
 %%=============================================================================
 
 \section{Referencial teórico}
 
-Texto introdutório de um parágrafo, conforme exigido pela ABNT. Essa parte do
-trabalho demanda o domínio das regras de citação (diretas e indiretas). É nessa
-parte do trabalho que problemas legais em relação à apropriação de ideias de
-outros autores ocorrem com maior frequência. Portanto, reveja as regras
-estabelecidas pela ABNT para citações diretas e indiretas e para a indicação de
-fontes de gráficos, figuras ou outro recurso ilustrativo utilizado.
+O referencial teórico será organizado em torno de uma questão central: a geração
+de dados sintéticos não deve ser avaliada apenas pela capacidade de produzir
+registros plausíveis, mas pela relação entre fidelidade, utilidade analítica e
+risco de exposição. Essa perspectiva permite deslocar o foco de uma avaliação
+centrada exclusivamente no algoritmo gerador para uma avaliação orientada ao uso
+do artefato, coerente com o caráter aplicado da pesquisa.
 
-É importante lembrar que o desenvolvimento do trabalho será guiado pelo
-orientador, a quem cabe julgar se a Seção 2 poderá iniciar-se por ``revisão de
-literatura'', ``referencial teórico'' ou já abordar o primeiro tema a ser
-discutido no trabalho. O número de subtópicos desse item dependerá dos conceitos
-envolvidos na sua questão problema.
+\subsection{Dados sintéticos e o desafio dos dados tabulares}
 
-%% --- Exemplo de figura com legenda ACIMA e fonte ABAIXO --------------------
-\begin{figure}[htb]
-  \caption{Título da Figura}
-  \label{fig:exemplo}
-  \centering
-  \includegraphics[width=0.6\textwidth]{figuras/exemplo-figura.png}
-  \fonte{Niemeyer (2008).}
-\end{figure}
+Para dados tabulares heterogêneos, a escolha do modelo torna-se particularmente
+importante. \citeonline{xu2019} destacam que tabelas combinam variáveis discretas
+e contínuas, distribuições multimodais e categorias desbalanceadas,
+características que dificultam a aplicação direta de modelos tradicionais. A
+CTGAN foi proposta como uma arquitetura condicional para enfrentar parte desses
+problemas, utilizando condicionamento e estratégias específicas para variáveis
+categóricas.
 
-Caso a ilustração seja de sua autoria, escreva \textbf{Fonte:} Do autor
-(\the\year). Use o mesmo padrão para quadros e gráficos, alterando apenas o
-título. Se precisar de notas de rodapé\footnote{Texto de exemplo para nota de
-rodapé. A nota de rodapé apresenta informações ou comentários adicionais sobre o
-conteúdo, em fonte 10 e espaçamento simples.}, elas devem estar dispostas no pé
-da página.
+Uma das contribuições mais importantes para a avaliação de dados sintéticos é a
+distinção entre utilidade geral e utilidade específica proposta por
+\citeonline{snoke2018}. A utilidade geral procura avaliar se os dados sintéticos
+possuem distribuição comparável à dos dados originais; a utilidade específica,
+por sua vez, compara os resultados de uma análise concreta realizada nos dois
+datasets. Essa distinção é fundamental porque um dataset pode reproduzir
+distribuições marginais de forma satisfatória e, ainda assim, falhar em preservar
+relações importantes para uma tarefa analítica.
 
-\subsection{Título representativo do primeiro conceito: subtítulo se houver}
+\subsection{Avaliação da utilidade de dados sintéticos}
 
-Discussão específica sobre a articulação das informações com foco na delimitação
-proposta pelos cursistas (bibliografia e orientação a cargo dos orientadores
-acadêmicos).
-
-\subsubsection{Título representativo: subtítulo se houver}
-
-No decorrer do desenvolvimento de cada capítulo (seção) e subcapítulo (subseção)
-utilizam-se citações diretas e indiretas para esclarecimentos, sustentações ou
-ilustrações de determinado assunto. A citação direta é a transcrição textual, sem
-alteração, de parte da obra do autor consultado.
-
-\textbf{Exemplo: citação direta de até 3 linhas} --- vai entre aspas duplas, no
-corpo do parágrafo:
-
-De acordo com \citeonline[p.~35]{sa1971}, acontece ``por meio da mesma arte de
-conversação que abrange tão extensa e significativa parte da nossa existência
-cotidiana''.
-
-\textbf{Exemplo: citação direta com mais de 3 linhas} --- recuo de 4~cm, fonte
-10, espaçamento simples e sem aspas:
-
-Assim, de acordo com Nicholls:
+A necessidade de relacionar a métrica à finalidade da avaliação aparece no
+estudo de validação de métricas de utilidade conduzido por El Emam e
+colaboradores:
 
 \begin{citacao}
-A teleconferência permite ao indivíduo participar de um encontro nacional ou
-regional sem a necessidade de deixar seu local de origem. Tipos comuns de
-teleconferência incluem o uso da televisão, telefone e computador. Através de
-áudio-conferência, utilizando a companhia local de telefone, um sinal de áudio
-pode ser emitido em um salão de qualquer dimensão. \parencite[p.~181]{nicholls1993}
+A regular task by developers and users of synthetic data generation (SDG)
+methods is to evaluate and compare the utility of these methods. Multiple
+utility metrics have been proposed and used to evaluate synthetic data.
+However, they have not been validated in general or for comparing SDG methods.
+\parencite{elemam2022}
 \end{citacao}
 
-\textbf{Exemplo: citação indireta} --- é o texto baseado na obra do autor
-consultado; você transcreve aquilo que entendeu do texto lido:
-
-Para \citeonline{authier1982}, a ironia seria assim uma forma implícita de
-heterogeneidade. Para mais informações sobre citação, consulte a norma
-NBR 10520 \parencite{abnt10520}.
-
-%% --- Exemplo de quadro -----------------------------------------------------
-\begin{quadro}[htb]
-  \caption{Título do quadro}
-  \label{qua:exemplo}
-  \centering
-  \begin{tabular}{ll}
-    \toprule
-    \textbf{Elemento} & \textbf{Norma aplicável} \\
-    \midrule
-    Trabalhos acadêmicos & NBR 14724 \\
-    Referências          & NBR 6023  \\
-    Citações             & NBR 10520 \\
-    Sumário              & NBR 6027  \\
-    Resumo               & NBR 6028  \\
-    \bottomrule
-  \end{tabular}
-  \fonte{Elaborado pelo autor (\the\year).}
-\end{quadro}
-
-%% --- Exemplo de tabela -----------------------------------------------------
-\begin{table}[htb]
-  \caption{Nome da Tabela 1}
-  \label{tab:exemplo}
-  \centering
-  \begin{tabular}{lrr}
-    \toprule
-    \textbf{Categoria} & \textbf{Frequência} & \textbf{\%} \\
-    \midrule
-    Categoria A & 120 & 40,0 \\
-    Categoria B &  90 & 30,0 \\
-    Categoria C &  90 & 30,0 \\
-    \midrule
-    \textbf{Total} & \textbf{300} & \textbf{100,0} \\
-    \bottomrule
-  \end{tabular}
-  \fonte{Dados da pesquisa (\the\year).}
-\end{table}
-
-%% --- Exemplo de grafico ----------------------------------------------------
-\begin{grafico}[htb]
-  \caption{Nome do Gráfico 1}
-  \label{gra:exemplo}
-  \centering
-  \includegraphics[width=0.55\textwidth]{figuras/exemplo-figura.png}
-  \fonte{Elaborado pelo autor (\the\year).}
-\end{grafico}
+No estudo, foram avaliadas seis métricas em 30 datasets e três métodos de
+geração, e a distância multivariada de Hellinger baseada em uma representação
+Gaussian Copula apresentou o melhor desempenho para o objetivo de ranquear os
+métodos \parencite{elemam2022}. O resultado reforça uma questão central desta
+pesquisa: a métrica escolhida deve ser relacionada à finalidade da avaliação, e
+não apenas à facilidade de cálculo.

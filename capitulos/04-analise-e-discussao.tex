@@ -1,22 +1,23 @@
 %%=============================================================================
 %% CAPITULO 4 -- APRESENTACAO, ANALISE E DISCUSSAO DOS DADOS
+%%
+%% Texto dummy (exercicio ia-6.1): trechos do pre-projeto do autor (versao 7).
 %%=============================================================================
 
 \section{Análise e discussão dos dados}
 
-Apresente os resultados alcançados ou esperados e faça uma análise comparativa
-entre os resultados esperados e os alcançados com a execução do projeto de
-pesquisa ou de intervenção.
+O protocolo TRTR será utilizado como referência: modelo treinado em dados reais
+de treinamento e testado em dados reais de teste. O protocolo TSTR será o
+experimento principal: modelo treinado em dados sintéticos e testado no mesmo
+conjunto real de teste. Para classes desbalanceadas serão priorizados PR-AUC,
+recall, F1 e, quando pertinente, intervalos de confiança; ROC-AUC será
+complementar e não será utilizado isoladamente.
 
-\subsection{Apresentação dos resultados}
-
-Organize os resultados na mesma ordem em que os objetivos específicos foram
-enunciados na introdução. Use tabelas, quadros e gráficos sempre que isso tornar
-a leitura mais clara, lembrando que toda ilustração precisa ser citada no texto
-(ver Tabela~\ref{tab:exemplo} e Figura~\ref{fig:exemplo}).
-
-\subsection{Discussão}
-
-Confronte os resultados com o referencial teórico construído no Capítulo~2.
-Indique convergências, divergências e possíveis explicações, sempre com o devido
-suporte bibliográfico.
+O artefato será considerado tecnicamente promissor se apresentar,
+simultaneamente, evidências de fidelidade nas métricas selecionadas, utilidade
+analítica adequada ao workload definido e ausência de sinais relevantes de
+exposição segundo os critérios estabelecidos. Nenhuma dimensão será considerada
+suficiente isoladamente. Um dataset que seja estatisticamente semelhante, mas não
+preserve a tarefa analítica, não será classificado como útil; da mesma forma, um
+dataset útil, mas com risco elevado de reprodução de registros, não será
+considerado adequado para compartilhamento.
