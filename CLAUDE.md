@@ -181,7 +181,7 @@ Só aparecem nas referências as obras efetivamente citadas — não use `\nocit
 
 ### Issue tracker
 
-Issues ficam em arquivos markdown locais em `.scratch/` (fora do git, pelo `.gitignore`). See `docs/agents/issue-tracker.md`.
+Issues ficam no GitHub Issues do fork `mauriciosmarinho/TemplateLatexIDP` (público), via `gh`. Exceção: o que trata da instituição parceira fica em markdown local em `.scratch/` (fora do git). See `docs/agents/issue-tracker.md`.
 
 ### Triage labels
 
