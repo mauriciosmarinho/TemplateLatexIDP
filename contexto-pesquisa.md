@@ -31,7 +31,9 @@ Este arquivo descreve o estado atual da dissertação de mestrado (Mestrado Prof
 - **Posicionamento** (decisão do ticket #7 do mapa):
   - **Alabdulwahab, Kim e Son (2024)** é o vizinho de método e avaliação: a mesma avaliação conjunta com CTGAN, em tráfego de IDS com base pública. Com o Anonymeter na exposição, os resultados ficam comparáveis aos deles;
   - **Kapelinski e Kreutz (2026)** é o vizinho de domínio e é tratado como **complemento**: eles protegem o modelo que consome os dados; este trabalho protege os dados que alimentam o modelo;
-  - **privacidade diferencial:** fora do artefato, como delimitação justificada no texto (tende a degradar a utilidade nas classes raras, centrais na priorização). A evidência para essa justificativa é o ticket #8.
+  - **Synth Vuln** (Scott e Cohen, 2025), achado na busca sistemática (#6), é um terceiro vizinho de domínio: um gerador por configuração de ativos e achados de scanner, não aprendido de dados reais e sem avaliação de exposição;
+  - **afirmação de ausência:** confirmada na Scopus e na ACM DL (busca de 2026-10-14, #6). O texto pode afirmá-la citando as bases e a data. A IEEE Xplore ficou de fora;
+  - **privacidade diferencial:** fora do artefato, como **escolha de escopo**. O ticket #8 mostrou que a literatura matiza a justificativa: há perda desproporcional nas classes minoritárias com PD por DP-SGD/PATE em GANs (Ganev et al., 2022; Bullwinkel et al., 2022; Stadler et al., 2022), mas não com mecanismos de marginais (MST, MWEM-PGM), e os GANs já perdem nas classes raras sem PD. A delimitação fica restrita à família do CTGAN: primeiro medir a perda sem PD. A comparação MST/AIM × DP-CTGAN fica como trabalho futuro. Detalhes em `docs/research/08-pd-classes-raras.md`.
 
 ## 3. O que está em aberto
 
@@ -42,7 +44,6 @@ Este arquivo descreve o estado atual da dissertação de mestrado (Mestrado Prof
 - **Critério de sucesso:** o limiar de preservação de desempenho entre TSTR e TRTR, a ser justificado e registrado antes da análise final.
 - **Parametrização do *membership disclosure*:** se a base real for a população inteira de ativos, e não uma amostra, a proporção de partição muda.
 - **Distância de Hellinger** na utilidade ampla: decisão pendente.
-- **Afirmação de ausência** ("não há trabalho que…"): depende da busca sistemática (#6). Até lá, o texto diz "nas fontes consultadas".
 
 ## 4. Pergunta de aprofundamento
 
