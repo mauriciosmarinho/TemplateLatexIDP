@@ -26,8 +26,12 @@ Este arquivo descreve o estado atual da dissertação de mestrado (Mestrado Prof
   - **título:** "Pipeline para geração de dados sintéticos de vulnerabilidades: avaliação de utilidade analítica e risco de exposição". Cita o artefato, o recorte e a avaliação conjunta; o setor público fica fora do título;
   - **pergunta de pesquisa:** em que medida um pipeline de dados sintéticos para dados de vulnerabilidades, aplicado em uma organização pública, preserva a utilidade analítica (ampla e na priorização de vulnerabilidades) sem expor ativos, vulnerabilidades ou registros da base real? A fidelidade e o CTGAN ficam fora da pergunta;
   - **objetivo geral:** desenvolver e avaliar o pipeline;
-  - **objetivos específicos:** (1) estruturar o *data airlock* e o conjunto real de teste isolado; (2) gerar dados sintéticos com CTGAN (e baseline, se houver tempo); (3) avaliar a fidelidade e a utilidade ampla; (4) avaliar a utilidade estrita, TSTR × TRTR na priorização, com critério pré-registrado; (5) avaliar a exposição, com proximidade, memorização e *membership disclosure*. A consolidação do pipeline como produto técnico **não** é objetivo específico: o pipeline continua sendo o produto técnico, mas fora dos objetivos da pesquisa;
+  - **objetivos específicos:** (1) estruturar o *data airlock* e o conjunto real de teste isolado; (2) gerar dados sintéticos com CTGAN (e baseline, se houver tempo); (3) avaliar a fidelidade e a utilidade ampla; (4) avaliar a utilidade estrita, TSTR × TRTR na priorização, com critério pré-registrado; (5) avaliar a exposição, com proximidade, memorização, *membership disclosure* e os ataques do Anonymeter (*singling out*, *linkability*, *inference*). A consolidação do pipeline como produto técnico **não** é objetivo específico: o pipeline continua sendo o produto técnico, mas fora dos objetivos da pesquisa;
   - **hipóteses:** H1 (fidelidade), H2a (utilidade ampla), H2b (utilidade estrita) e H3 (exposição). A relação entre utilidade ampla e estrita é análise exploratória, não hipótese.
+- **Posicionamento** (decisão do ticket #7 do mapa):
+  - **Alabdulwahab, Kim e Son (2024)** é o vizinho de método e avaliação: a mesma avaliação conjunta com CTGAN, em tráfego de IDS com base pública. Com o Anonymeter na exposição, os resultados ficam comparáveis aos deles;
+  - **Kapelinski e Kreutz (2026)** é o vizinho de domínio e é tratado como **complemento**: eles protegem o modelo que consome os dados; este trabalho protege os dados que alimentam o modelo;
+  - **privacidade diferencial:** fora do artefato, como delimitação justificada no texto (tende a degradar a utilidade nas classes raras, centrais na priorização). A evidência para essa justificativa é o ticket #8.
 
 ## 3. O que está em aberto
 
@@ -38,6 +42,7 @@ Este arquivo descreve o estado atual da dissertação de mestrado (Mestrado Prof
 - **Critério de sucesso:** o limiar de preservação de desempenho entre TSTR e TRTR, a ser justificado e registrado antes da análise final.
 - **Parametrização do *membership disclosure*:** se a base real for a população inteira de ativos, e não uma amostra, a proporção de partição muda.
 - **Distância de Hellinger** na utilidade ampla: decisão pendente.
+- **Afirmação de ausência** ("não há trabalho que…"): depende da busca sistemática (#6). Até lá, o texto diz "nas fontes consultadas".
 
 ## 4. Pergunta de aprofundamento
 
