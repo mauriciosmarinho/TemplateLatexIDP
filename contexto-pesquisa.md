@@ -22,10 +22,16 @@ Este arquivo descreve o estado atual da dissertação de mestrado (Mestrado Prof
   - **exposição:** possibilidade de o conjunto sintético revelar ativos, vulnerabilidades ou registros específicos da base real. É medida por proximidade entre registros, sinais de memorização e *membership disclosure* (**obrigatório**).
 - EPSS e CVSS entram como variáveis explicativas, **não** como verdade de referência da utilidade, para evitar circularidade.
 - Privacidade diferencial fica como pesquisa futura e não é requisito do artefato.
+- **Título, pergunta e objetivos** (decisão do ticket #5 do mapa), sem o BIA:
+  - **título:** "Pipeline para geração de dados sintéticos de vulnerabilidades: avaliação de utilidade analítica e risco de exposição". Cita o artefato, o recorte e a avaliação conjunta; o setor público fica fora do título;
+  - **pergunta de pesquisa:** em que medida um pipeline de dados sintéticos para dados de vulnerabilidades, aplicado em uma organização pública, preserva a utilidade analítica (ampla e na priorização de vulnerabilidades) sem expor ativos, vulnerabilidades ou registros da base real? A fidelidade e o CTGAN ficam fora da pergunta;
+  - **objetivo geral:** desenvolver e avaliar o pipeline;
+  - **objetivos específicos:** (1) estruturar o *data airlock* e o conjunto real de teste isolado; (2) gerar dados sintéticos com CTGAN (e baseline, se houver tempo); (3) avaliar a fidelidade e a utilidade ampla; (4) avaliar a utilidade estrita, TSTR × TRTR na priorização, com critério pré-registrado; (5) avaliar a exposição, com proximidade, memorização e *membership disclosure*. A consolidação do pipeline como produto técnico **não** é objetivo específico: o pipeline continua sendo o produto técnico, mas fora dos objetivos da pesquisa;
+  - **hipóteses:** H1 (fidelidade), H2a (utilidade ampla), H2b (utilidade estrita) e H3 (exposição). A relação entre utilidade ampla e estrita é análise exploratória, não hipótese.
 
 ## 3. O que está em aberto
 
-- O **título**, a **pergunta de pesquisa** e os **objetivos** ainda citam a criticidade de processos de negócio e precisam ser revistos depois da saída do BIA.
+- A **redação final** da pergunta e dos objetivos (o conteúdo e o título foram decididos no #5), a ser levada ao texto da dissertação.
 - **Tarefa analítica do TSTR:** a opção preferida é a classificação histórica de prioridade de tratamento, desde que a base tenha consistência suficiente.
 - **Suficiência da base:** volume, cardinalidade e classes raras só serão conhecidos no *profiling*. Se forem insuficientes, o trabalho assume caráter de estudo de viabilidade.
 - **Acesso a dados reais:** ainda não confirmado. Hoje existem apenas dados fictícios, gerados por script.
