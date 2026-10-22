@@ -16,7 +16,7 @@ Este arquivo descreve o estado atual da dissertação de mestrado (Mestrado Prof
 - **Gerador:** CTGAN como método principal. Se houver tempo, um baseline não neural (Gaussian Copula/SDV), sem virar um benchmark de geradores.
 - **Preparação:** um fluxo de *data airlock* (extração controlada, remoção ou transformação de identificadores, agrupamento de categorias raras) e um conjunto real de teste isolado, que nunca é visto pelo gerador.
 - **Avaliação em três dimensões, todas obrigatórias ao mesmo tempo:**
-  - **fidelidade:** distribuições marginais (KS) e associações;
+  - **fidelidade:** distribuições marginais (KS) e associações, mais um critério para **classes raras** (decisão do ticket #12): categorias abaixo de um limiar de frequência (provisório: 5%) e uma lista de domínio (KEV = sim), com a proporção sintética dentro do intervalo binomial de 99% do real; qualquer categoria fora reprova a fidelidade;
   - **utilidade ampla** (El Emam et al., 2022): distância de Wasserstein, *cluster analysis measure* com GMM como algoritmo de agrupamento e **Hellinger multivariada** (decisão do ticket #11). No portão, a Hellinger usa limiar relativo ao holdout, H(sintético) ≤ k × H(holdout). A versão univariada por histograma foi descartada;
   - **utilidade estrita (validade analítica):** TSTR comparado a TRTR numa tarefa analítica definida *a priori*, com PR-AUC, recall e F1;
   - **exposição:** possibilidade de o conjunto sintético revelar ativos, vulnerabilidades ou registros específicos da base real. É medida por proximidade entre registros, sinais de memorização e *membership disclosure* (**obrigatório**).
@@ -44,7 +44,6 @@ Este arquivo descreve o estado atual da dissertação de mestrado (Mestrado Prof
 - **Critério de sucesso:** o limiar de preservação de desempenho entre TSTR e TRTR, a ser justificado e registrado antes da análise final.
 - **Parametrização do *membership disclosure*:** se a base real for a população inteira de ativos, e não uma amostra, a proporção de partição muda.
 - **Representação Gaussian Copula da Hellinger multivariada:** conferir no artigo completo de El Emam et al. (2022); a operacionalização atual é do autor (#11).
-- **Fidelidade em classes raras:** a TVD absoluta não detecta desvio relativo em categoria rara; falta um critério (#11).
 
 ## 4. Pergunta de aprofundamento
 
