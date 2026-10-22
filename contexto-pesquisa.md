@@ -19,7 +19,7 @@ Este arquivo descreve o estado atual da dissertação de mestrado (Mestrado Prof
   - **fidelidade:** distribuições marginais (KS) e associações, mais um critério para **classes raras** (decisão do ticket #12): categorias abaixo de um limiar de frequência (provisório: 5%) e uma lista de domínio (KEV = sim), com a proporção sintética dentro do intervalo binomial de 99% do real; qualquer categoria fora reprova a fidelidade, e uma categoria que some do sintético sempre reprova;
   - **utilidade ampla** (El Emam et al., 2022): distância de Wasserstein, *cluster analysis measure* com GMM como algoritmo de agrupamento e **Hellinger multivariada** (decisão do ticket #11). No portão, a régua da Hellinger é o ruído amostral do real: o percentil 95 de H em 30 repartições do real (aprova se H(sintético) ≤ esse percentil). A versão univariada por histograma foi descartada;
   - **utilidade estrita (validade analítica):** TSTR comparado a TRTR numa tarefa analítica definida *a priori*, com PR-AUC, recall e F1;
-  - **exposição:** possibilidade de o conjunto sintético revelar ativos, vulnerabilidades ou registros específicos da base real. É medida por proximidade entre registros, sinais de memorização e *membership disclosure* (**obrigatório**).
+  - **exposição:** possibilidade de o conjunto sintético revelar ativos, vulnerabilidades ou registros específicos da base real. É medida por proximidade entre registros, sinais de memorização e *membership disclosure* (**obrigatório**), além dos ataques do Anonymeter. No portão, o Anonymeter usa a estimativa pontual com o máximo de ataques (decisão do ticket #13).
 - EPSS e CVSS entram como variáveis explicativas, **não** como verdade de referência da utilidade, para evitar circularidade.
 - Privacidade diferencial fica como pesquisa futura e não é requisito do artefato.
 - **Título, pergunta e objetivos** (decisão do ticket #5 do mapa), sem o BIA:
@@ -43,7 +43,6 @@ Este arquivo descreve o estado atual da dissertação de mestrado (Mestrado Prof
 - **Acesso a dados reais:** ainda não confirmado. Hoje existem apenas dados fictícios, gerados por script.
 - **Critério de sucesso:** o limiar de preservação de desempenho entre TSTR e TRTR, a ser justificado e registrado antes da análise final.
 - **Parametrização do *membership disclosure*:** se a base real for a população inteira de ativos, e não uma amostra, a proporção de partição muda.
-- **Regra do Anonymeter no portão:** a estimativa pontual com 500 ataques oscila entre sementes; decidir entre o limite do IC e mais ataques.
 - **Representação Gaussian Copula da Hellinger multivariada:** conferir no artigo completo de El Emam et al. (2022); a operacionalização atual é do autor (#11).
 
 ## 4. Pergunta de aprofundamento
