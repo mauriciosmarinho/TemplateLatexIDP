@@ -43,10 +43,10 @@ Este arquivo descreve o estado atual da dissertação de mestrado (Mestrado Prof
 - **Suficiência da base:** volume, cardinalidade e classes raras só serão conhecidos no *profiling*. Se forem insuficientes, o trabalho assume caráter de estudo de viabilidade.
 - **Acesso a dados reais:** ainda não confirmado. Hoje existem apenas dados fictícios, gerados por script.
 - **Critério de sucesso:** o limiar de preservação de desempenho entre TSTR e TRTR, a ser justificado e registrado antes da análise final.
-- **Parametrização do *membership disclosure*:** se a base real for a população inteira de ativos, e não uma amostra, a proporção de partição muda.
+- **Parametrização do *membership disclosure*:** El Emam, Mosquera e Fang (2022) mostram que a proporção de membros no ataque deve ser a fração de amostragem (n/N), e não 0,5. Se a base real for a população inteira, o pertencimento perde sentido e a exposição relevante passa a ser a inferência. Decisão em aberto (mapa #1).
 - **Pares de domínio no portão:** a relação EPSS × KEV fica diluída na média das associações. Com dados fictícios, o CTGAN reproduz 24% a 42% dela e a Copula quase nada (#15). Avaliar um critério próprio, com régua pelo ruído amostral do real.
 - **Tarefa de 30 dias e censura:** achados abertos detectados há menos de 30 dias da exportação saem da tarefa, em vez de entrar como negativos (#15).
-- **Representação Gaussian Copula da Hellinger multivariada:** conferir no artigo completo de El Emam et al. (2022); a operacionalização atual é do autor (#11).
+- **Representação Gaussian Copula da Hellinger multivariada:** o artigo completo de El Emam et al. (2022) também não descreve a etapa (conferido em 2026-10-23) e remete a Joe (2015). A operacionalização continua sendo do autor (#11).
 
 ## 4. Pergunta de aprofundamento
 
