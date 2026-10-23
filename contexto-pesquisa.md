@@ -13,7 +13,7 @@ Este arquivo descreve o estado atual da dissertação de mestrado (Mestrado Prof
 - **Natureza:** estudo aplicado e experimental, com princípios de Design Science Research. O artefato avaliado é o **pipeline completo** (preparação, geração, validação e uso analítico), e não o gerador isoladamente.
 - **Contribuição principal:** o **artefato**. O pipeline é também o **produto técnico** do mestrado profissional. Ele é projetado para uma classe de problemas (exportações de scanner enriquecidas com NVD/CVE, EPSS e KEV) e avaliado num único caso: a generalidade é de projeto, não estatística. As contribuições secundárias são a adaptação da avaliação ao domínio e a evidência empírica do caso. O critério é **construir e avaliar**, e um resultado negativo também é válido (decisão do ticket #4 do mapa).
 - **Escopo:** sem os dados de Business Impact Analysis (BIA). A análise de risco foi reduzida à priorização de vulnerabilidades.
-- **Gerador:** CTGAN como método principal, com `log_frequency=False` (decisão do ticket #14: o padrão do ctgan aplica a log-frequência também na geração e infla as classes raras). Se houver tempo, um baseline não neural (Gaussian Copula/SDV), sem virar um benchmark de geradores.
+- **Gerador:** CTGAN como método principal, com `log_frequency=False` (decisão do ticket #14: o padrão do ctgan aplica a log-frequência também na geração e infla as classes raras); 800 épocas e 3 passos do discriminador, escolhidos numa validação tirada do treino, sem tocar no holdout (decisão do ticket #15). O EPSS entra em logit, com o átomo do piso separado numa coluna categórica (#15). Se houver tempo, um baseline não neural (Gaussian Copula/SDV), sem virar um benchmark de geradores.
 - **Preparação:** um fluxo de *data airlock* (extração controlada, remoção ou transformação de identificadores, agrupamento de categorias raras) e um conjunto real de teste isolado, que nunca é visto pelo gerador.
 - **Avaliação em três dimensões, todas obrigatórias ao mesmo tempo:**
   - **fidelidade:** distribuições marginais (KS) e associações, mais um critério para **classes raras** (decisão do ticket #12): categorias abaixo de um limiar de frequência (provisório: 5%) e uma lista de domínio (KEV = sim), com a proporção sintética dentro do intervalo binomial de 99% do real; qualquer categoria fora reprova a fidelidade, e uma categoria que some do sintético sempre reprova;
@@ -43,6 +43,8 @@ Este arquivo descreve o estado atual da dissertação de mestrado (Mestrado Prof
 - **Acesso a dados reais:** ainda não confirmado. Hoje existem apenas dados fictícios, gerados por script.
 - **Critério de sucesso:** o limiar de preservação de desempenho entre TSTR e TRTR, a ser justificado e registrado antes da análise final.
 - **Parametrização do *membership disclosure*:** se a base real for a população inteira de ativos, e não uma amostra, a proporção de partição muda.
+- **Pares de domínio no portão:** a relação EPSS × KEV fica diluída na média das associações. Com dados fictícios, o CTGAN reproduz 24% a 42% dela e a Copula quase nada (#15). Avaliar um critério próprio, com régua pelo ruído amostral do real.
+- **Tarefa de 30 dias e censura:** achados abertos detectados há menos de 30 dias da exportação saem da tarefa, em vez de entrar como negativos (#15).
 - **Representação Gaussian Copula da Hellinger multivariada:** conferir no artigo completo de El Emam et al. (2022); a operacionalização atual é do autor (#11).
 
 ## 4. Pergunta de aprofundamento
